@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.box{
+    height: 50px;
+    width: 50px;
+    border: solid 2px black;
+    opacity: 70%;
+}
+.padre{
+    background-color: darkblue;
+position: absolute;}
+
+.cajita1{
+    background-color: crimson;
+
+}
+
+.cajita2{
+    background-color: rgb(20, 220, 73);
+    position: relative;
+    top:0;
+    width: 10px;
+}
+
+.cajita3{
+    background-color: rgb(20, 207, 220);
+    position: static;
+}
+
+.cajita4{
+    background-color: rgb(250, 200, 0);
+    position: static;
+}
+/* 
+En CSS, las propiedades position y top, bottom, left y right se utilizan juntas para posicionar elementos en la página.
+
+    Hay cuatro valores posibles para la propiedad position:
+    
+    static: el valor por defecto. El elemento sigue el flujo normal del documento.
+    relative: el elemento se posiciona en relación a su posición normal en el flujo del documento. Por tanto, las propiedades top, bottom, left y right se utilizan para mover el elemento respecto a su posición original.
+    absolute: el elemento se posiciona en relación a su elemento padre más cercano que tenga una posición definida (es decir, position diferente a static). Si ningún elemento padre tiene una posición definida, el elemento se posiciona en relación al cuerpo de la página.
+    fixed: el elemento se posiciona en relación a la ventana del navegador, por lo que siempre se mostrará en la misma posición en la página independientemente de la posición de la barra de desplazamiento o si se hace scroll en la página.
+    
+    Aquí hay un ejemplo sencillo que muestra cómo se pueden utilizar las propiedades position y top para mover un elemento dentro de su contenedor:
+    
+    Css
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+    }
+    
+    .box {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    } 
+     */
+     section{
+        position: relative;
+        width: 800px;
+        height: auto;
+     }
+.section-h4 {color: whitesmoke;
+    position: absolute;
+    top:60%;
+    left: 0;
+    width: 100%;
+    font-size: 3rem;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+     .section-img{width: 100%;}

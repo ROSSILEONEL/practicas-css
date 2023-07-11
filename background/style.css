@@ -1,0 +1,21 @@
+/* El valor por defecto del background color es transparent */
+div{
+    height: 20vh;
+    width: 60%;
+    text-align: center;
+    border: solid 2px thistle;
+    margin: 3px 0 0 0;
+}
+.bg-c{
+    background-color: teal;
+    color: white;
+}
+
+.bg-rgb{
+    background-color: rgb(00,00,00);
+    color:rgb(255, 255, 255)
+}
+.bg-hexa{
+    background-color: #40E2D6;
+    color: #19229A;
+}

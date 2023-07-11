@@ -1,0 +1,19 @@
+/* primero hay que crear un degradado */
+.gradient-text{
+    background-image: linear-gradient(80deg,magenta,yellow);
+    /* background-clip nos define desde donde empieza el fondo, si desde el borde padding , etc. hay una opcion que es text  */
+    background-clip: text;
+
+    /* la propiedad background-clip no esta definida para todos los navegadores, por eso hay que poner los prefijos
+    ms= internet explorer, -moz = firefox, -webkit = para otros navegadores 
+    cabe aclarar que hay herramientas pre-fixed que hacen esto sin tener la necesidad de hacerlo manualmente */
+-ms-background-clip:text;
+-moz-background-clip:text;
+-webkit-background-clip:text;
+
+-ms-text-fill-color: transparent;
+-moz-text-fill-color: transparent;
+-webkit-text-fill-color: transparent;
+
+font-size: 80px;
+} 

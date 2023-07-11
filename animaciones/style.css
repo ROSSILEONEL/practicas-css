@@ -1,0 +1,301 @@
+
+
+
+.card {
+    border: 1px solid #000;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 0;
+width: 450px;
+height: auto;
+
+}
+
+
+.card img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+    
+}
+ 
+/* si cambiamos la opacidad de 0 a 1 hacemos un efecto de fade in  */
+@keyframes myAwasomeAnimation{
+from{
+opacity: 0;
+transform: translateX(-40%);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+.my-animation{
+    animation-name: myAwasomeAnimation;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    animation-timing-function: ease-in-out;
+    animation-delay: 1000ms;
+    animation-iteration-count: infinite;
+    animation-iteration-count: 2;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-direction: alternate;
+    animation-direction: alternate-reverse;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-fill-mode: forwards;
+    animation-fill-mode: backwards;
+    animation-fill-mode: both;
+    /* el shorthand animation  */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+animation: myAwasomeAnimation 3s ease-in-out 1000ms 1 normal both ;
+
+}
+@keyframes animacionMultiple1{
+    0%{
+opacity: 1;
+    }50%{
+opacity: 0;
+    }100%{
+opacity: 1;
+    }
+}
+@keyframes animacionMultiple2{
+    0%{
+transform: translateY(0);   
+}
+50%{
+    transform: translateY(-100%);   
+    
+}100%{
+        transform: translateY(0);   
+
+    }
+}
+.animation-multiple{
+animation: animacionMultiple1 2s infinite, animacionMultiple2 4s infinite;
+}
+
+
+.motion-examples{
+    text-align: center;
+    font-size: 4vw;
+}
+@keyframes fadeIn {
+    0%{
+opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0%{
+opacity: 1;
+    }100%{
+        opacity: 0;
+    }
+}
+.fade-in{
+    font-size: 15vh;
+    animation: fadeIn 4s infinite;
+}
+.fade-out{
+    font-size: 15vh;
+    animation: fadeOut 4s infinite;
+}
+
+@keyframes shake {
+    10%,90%{
+        transform:translate(1px,0)
+    }
+    20%,80%{
+        transform:translate(2px,0)
+    }
+    30%,50%,70%{
+        transform:translate(-3px,0)
+    }
+    40%,60%{
+        transform:translate(3px,0)
+
+    }
+}
+.shake{
+    font-size: 5vw;
+}
+.shake:hover{
+animation: shake 1s cubic-bezier(0.36, 0.07, 0.055, 0.19)  both;
+transform: translate(0,0);
+}
+ @keyframes pulseH {
+    0%{
+        transform: scale(1);
+    }
+    35%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(1.4);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+ }
+ .pulse{
+    animation: pulseH 2s infinite;
+ }
+
+@keyframes rotacion {
+    0%{
+transform: rotate(0deg);
+    }100%{
+transform: rotate(360deg);
+    }
+    /* si deseamos que gire a la izquiera deberiamos poner los grados en negativo */
+}
+ .spinner{
+    /* background-color: #d00; */
+    height: 5vw;
+    width: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+    border: .5vw solid rgba(0, 0, 0, 0.034);
+    border-radius: 50%;
+    border-top-color: #09f;
+    animation: rotacion 1s ease-out infinite;
+ }
+
+ /* las siguientes transiciones de los botones son conocidas como Micro interacciones en el mundo de la UX/UI */
+.btn{
+    position: relative;
+    border: none;
+    border-radius: 0.25rem;
+    padding:0.2rem;
+    width: 12rem;
+    height: 2.5rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    cursor:pointer;
+    overflow: hidden;
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: 0.25rem 0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);}
+
+/* usamos after porque queremos que este abajo del elemento (despues), si quisieramos que este por encima seria before */
+.anim-bottom::after{
+content: "";
+position: absolute; /* absolute para que se posicione sobre su padre respectivamente*/
+bottom: 0;
+width: 0;
+height: 0.1rem;
+background-color: #d00;
+transition: width 0.5s ease,left 0.5s ease, right 0.5s ease;
+}
+
+.anim-bottom:hover::after{
+    width: 100%;
+}
+.to-left::after{
+left:0;
+}
+
+.to-right::after{
+    right: 0;
+}
+.to-center:hover::after{
+left: 0;
+}
+.to-center::after{
+    left: 50%;
+    
+}
+.anim-bg-gradient{
+    background-image:linear-gradient(to right,pink,violet,greenyellow,red) ;
+    background-size: 200% 100%;
+    /* 200% ancho, y alto del 100% */
+    transition: background-position 1s ease-in-out;
+}
+
+.anim-bg-gradient:hover{
+background-position: 100% 0 ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* la propiedad animation-iteration-count marca la cantidad de veces que vamos a hacer la animacion, por defecto es 1 */
+
+/* La función animation-delay marca el tiempo que tarda en empezar la animacion, se puede expresar en milisegundos o en segundos */
+
+/* La función `cubic-bezier()` es una función de temporización utilizada en CSS para controlar la aceleración y desaceleración de una animación. Se utiliza como valor para la propiedad `animation-timing-function`.
+
+La función `cubic-bezier()` toma cuatro valores numéricos que definen los puntos de control de una curva de Bezier cúbica. Estos valores representan las coordenadas x e y de los dos puntos de control.
+
+La sintaxis de la función `cubic-bezier()` es la siguiente:
+
+```
+cubic-bezier(x1, y1, x2, y2)
+```
+
+- `(x1, y1)` representa las coordenadas del primer punto de control.
+- `(x2, y2)` representa las coordenadas del segundo punto de control.
+
+Estos valores deben estar dentro del rango de 0 a 1, y definen la forma de la curva de aceleración y desaceleración de la animación.
+
+Un valor de `cubic-bezier(0, 0, 1, 1)` crea una animación lineal sin aceleración ni desaceleración, lo que significa que la animación se ejecuta a una velocidad constante.
+
+Para crear efectos de aceleración o desaceleración, se pueden ajustar los valores de los puntos de control. Por ejemplo, `cubic-bezier(0.42, 0, 1, 1)` crea una animación con una aceleración suave al principio y sin desaceleración al final.
+
+La función `cubic-bezier()` también se puede utilizar con herramientas o generadores en línea que te permiten visualizar y ajustar los valores de los puntos de control para obtener la curva de aceleración y desaceleración deseada.
+
+En resumen, `cubic-bezier()` es una función de temporización de CSS que permite controlar la aceleración y desaceleración de una animación mediante el uso de puntos de control que definen una curva de Bezier cúbica. */
+
+/* La propiedad CSS `animation-direction` indica si la animación debe retroceder hasta el fotograma de inicio al finalizar la secuencia o si debe comenzar desde el principio al llegar al final. Puede tener los siguientes valores²:
+
+- `normal`: La animación se reproduce de forma normal (hacia adelante). Este es el valor por defecto.
+- `reverse`: La animación se reproduce en sentido inverso (hacia atrás).
+- `alternate`: La animación se reproduce primero hacia adelante y luego hacia atrás.
+- `alternate-reverse`: La animación se reproduce primero hacia atrás y luego hacia adelante.
+
+Espero que esto te ayude. ¿Hay algo más en lo que pueda ayudarte?
+
+Origen: Conversación con Bing, 3/7/2023
+(1) animation-direction - CSS | MDN - MDN Web Docs. https://developer.mozilla.org/es/docs/Web/CSS/animation-direction.
+(2) Animaciones en CSS: crea efectos increíbles fácilmente 2023. https://bing.com/search?q=propiedad+css+direction+animaciones.
+(3) Propiedad animation-direction de CSS - KeepCoding Tech School. https://keepcoding.io/blog/propiedad-animation-direction-de-css/.
+(4) CSS - La propiedad CSS animation-direction establece si debe .... https://runebook.dev/es/docs/css/animation-direction. */
+
+/*  La propiedad fill-mode determina como va a quedar el elemento al finalizar la animacion.  */
+
+@keyframes myAwasomeAnimation2{
+    0%{
+    opacity: 1;
+    transform: translateX(-40%);
+    }
+    50% {
+        opacity: 0.2;
+        transform: translateX(0);
+    }100%{
+        opacity: 1;
+        
+    }
+    /* tambien podemos poner fotogramas intermedios como 75% , 20% , etc.  */
+    }
+    .my-animation-2{
+        animation: myAwasomeAnimation2 3s ease-in-out 500ms 2 normal both;
+    }

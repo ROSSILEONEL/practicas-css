@@ -1,0 +1,155 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,
+header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: sans-serif;
+}
+html{
+  overflow-x: hidden;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,
+hgroup,menu,nav,section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*{ text-align: center;
+  box-sizing: border-box ;}
+  /* fin del reset de css */
+
+ 
+
+
+/* MENU HAMBURGUESA CON CSS PURO , sin JS  */
+  .off-canvas-btn{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .off-canvas-burguer{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 998;
+    width: 3rem;
+    height: 0.6rem;
+    background-color:#d00;
+    border-radius: .3rem;
+    transform-origin: top left;
+    transform: rotate(0deg) translate(0,-1.2rem);
+    transition:transform 0.5s ease, background-color .5s ease ;
+  }
+  
+  /* las lineas del menu las vamos a formar con las pseudoclases after y before */
+  
+  .off-canvas-burguer::before,.off-canvas-burguer::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: .6rem;
+    background-color: #d00;
+    border-radius: .3rem;
+    transform: transform .5s ease ;
+    transition: transform .5s ease;
+  }
+  /* ahora le damos estylos particulares a c/u */
+  .off-canvas-burguer::before{
+    transform: rotate(0deg) translate(0,-0.9rem);
+    /* background-color: indigo; */
+  }
+  .off-canvas-burguer::after{
+    
+    transform: rotate(0deg) translate(0,0.3rem);
+    /* background-color: green; */
+  }
+
+  .off-canvas-btn:checked + .off-canvas-burguer{
+    background-color: transparent;
+  }
+  .off-canvas-btn:checked + .off-canvas-burguer::before{
+   transform: rotate(45deg) translate(0,0);
+  }
+  .off-canvas-btn:checked + .off-canvas-burguer::after{
+   transform: rotate(-45deg) translate(0.4rem,-0.5rem);
+  }
+
+/* para el posicionamiento, las posiciones top y left tienen mas importancia que bottom y right, es decir que si mas adelante posiciono con right y bottom , seran ignoradas */
+.off-canvas-menu{
+  position: fixed ;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  transform: translate(0,-100%);
+  transition: transform 2s ease;
+}
+
+.off-canvas-menu-container{
+ 
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.off-canvas-link{
+border-bottom: thin solid #d00;
+color: whitesmoke;
+padding: 2rem ;
+font-size: 1.5rem;
+text-align: center;
+text-decoration: none;
+transition: background-color 2s ease;
+}
+
+
+.off-canvas-link:hover{
+  background-color: #d005;
+}
+
+.off-canvas-link:first-child{
+  
+  border-top: thin solid #d00;
+
+}
+
+.off-canvas-btn:checked~.off-canvas-menu{
+  transform: translate(0,0);
+}

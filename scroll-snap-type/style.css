@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+    font-family:  sans-serif;
+    font-size: 16px;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+/* el body por default trae un margin de 8px, hay que sacarlo */
+body{
+    margin: 0;
+    padding: 0;
+    
+  }
+  /* slides la class el main  */
+  .slides{
+    width: 100%;
+    height: 100vh;
+    /* es importante que el height tenga 100 viewport height */
+    overflow-y: scroll;
+    /* sin el ajuste de overflow este efecto no va a funcionar. */
+    scroll-snap-type: block mandatory ;
+    /* scroll-snap-type recibe dos valores, puede ser x, y, inline,block, both 
+    para controlar el desplazamiento horizontal ponemos x o inline , para vertical block o y.
+    mandatory es un efecto al igual que proximity */
+  }
+
+  /* slide es la clase del section */
+  .slide{
+    width: 100%;
+    height: inherit;
+    background-color: #1e2345 ;
+    /* es importante que los elementos hijos tengan la apropiedad scroll-snap-align */
+    scroll-snap-align: center;
+  }
+  /* con even hacemos uno si uno no .  */
+  .slide:nth-child(even){
+    background-color: #108eb4;
+  }
+  
+  /* slide-container es la clase del article */
+  .slide-container{
+    width: 80%;
+    height: inherit;
+    margin: 0 auto;
+    /* margin 0 arriba y abajo , automatico a los costados */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content ajustar y alinear los items en forma horizontal, en el eje x (main axis)  */
+    align-items: center;
+    /* align-items alinea los items en  el cross axis, el eje y (vertical)*/
+    font-size: 2vw;  
+    /* vw es viewport width */
+    color: #d9e8f0
+  }

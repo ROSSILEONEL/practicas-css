@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+font-family: sans-serif;
+font-size: 16px;}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+
+.square {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    line-height: 100px;
+}
+
+.square1 {
+    background-color: #FF5733;
+}
+
+.square2 {
+    background-color: #16A085;
+}
+
+.square3 {
+    background-color: #2980B9;
+}
+
+.square4 {
+    background-color: #8E44AD;
+}
+
+/* Transiciones
+transition-property , a que propiedad le aplico la transicion
+transition-duration , cuanto tiempo en s o ms 
+transition-timing-function , none linear ease (aceleracion) ease-in ease-out steps
+transition-delay ,  
+short hand para transition
+transition: property duration timing-function delay 
+ */
+  .square1{
+    background-color: black;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;
+ }
+.square1:hover{
+    background-color: cyan;
+}
